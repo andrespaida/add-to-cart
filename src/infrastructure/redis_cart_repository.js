@@ -5,7 +5,11 @@ class RedisCartRepository {
 
   async save(cartItem) {
     const key = `cart:${cartItem.userId}`;
-    await this.redis.hset(key, cartItem.productId, cartItem.quantity);
+    const item = JSON.stringify({
+      productId: cartItem.productId,
+      quantity: cartItem.quantity
+    });
+    await this.redis.lpush(key, item);
   }
 }
 
