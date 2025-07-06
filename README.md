@@ -7,7 +7,7 @@ Microservice for adding products to the shopping cart.
 ```bash
 git clone https://github.com/andrespaida/add-to-cart.git
 cd add-to-cart
-go run cmd/server/main.go
+npm start
 ```
 
 ## 🐳 Docker
